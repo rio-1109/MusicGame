@@ -2,15 +2,14 @@ using System.Collections;
 using UnityEngine;
 using System.IO;
 using SimpleFileBrowser;
-using UnityEngine.SceneManagement;
 
-public class addFile : MonoBehaviour
-{
+
+public class addFile : MonoBehaviour {
+    Connect connect;
     void Start() {
         FileBrowser.SetFilters(true, new FileBrowser.Filter("mp3", ".mp3"));
         FileBrowser.SetDefaultFilter(".mp3");
         FileBrowser.AddQuickLink("Users", "C:\\Users", null);
-        Debug.Log("ok");
         StartCoroutine(ShowLoadDialogCoroutine());
     }
 
@@ -20,10 +19,12 @@ public class addFile : MonoBehaviour
 
         if (FileBrowser.Success) {
             for(int i=0; i<FileBrowser.Result.Length; i++) {
-                Debug.Log( FileBrowser.Result[i]);
+                Debug.Log(FileBrowser.Result[i]);
+                // connect.startConnect(FileBrowser.Result[i]);
+                connect = GameObject.Find("Connect").GetComponent<Connect>();
+                connect.startConnect(FileBrowser.Result[i]);
             }
             
         }
-        SceneManager.LoadScene("Scene2");
     }
 }
