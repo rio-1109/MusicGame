@@ -8,7 +8,9 @@ using static System.IO.Path;
 public class Connect : MonoBehaviour {
     // Start is called before the first frame update
     string URL = "https://music-game-331007.an.r.appspot.com";
+    // string URL = "http://127.0.0.1:5000/";
     public string chartsPath = "Assets/Charts/test1.json";
+    // public string chartsPath = "Assets/Charts/";
     public string path;
     public string title;
     
@@ -23,9 +25,9 @@ public class Connect : MonoBehaviour {
 
      IEnumerator OnSend(string url) {
          WWWForm form = new WWWForm();
-         form.AddField("title","hello");
+         form.AddField("title",title);
          byte[] bytes = File.ReadAllBytes(path);
-         form.AddBinaryData("mp3", bytes, Path.GetFileName(path),"multipart/form-data");
+         form.AddBinaryData("musicFile", bytes, Path.GetFileName(path),"multipart/form-data");
          UnityWebRequest webRequest = UnityWebRequest.Post(url, form);
          yield return webRequest.SendWebRequest();
          if (webRequest.result == UnityWebRequest.Result.ConnectionError) {

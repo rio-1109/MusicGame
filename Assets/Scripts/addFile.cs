@@ -7,8 +7,8 @@ using SimpleFileBrowser;
 public class addFile : MonoBehaviour {
     Connect connect;
     void Start() {
-        FileBrowser.SetFilters(true, new FileBrowser.Filter("mp3", ".mp3"));
-        FileBrowser.SetDefaultFilter(".mp3");
+        FileBrowser.SetFilters(true, new FileBrowser.Filter("wav", ".wav"));
+        FileBrowser.SetDefaultFilter(".wav");
         FileBrowser.AddQuickLink("Users", "C:\\Users", null);
         StartCoroutine(ShowLoadDialogCoroutine());
     }
