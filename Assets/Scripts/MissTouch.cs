@@ -17,6 +17,6 @@ public class MissTouch : MonoBehaviour{
   }
 
   void Update(){
-    
+  
   }
 }
