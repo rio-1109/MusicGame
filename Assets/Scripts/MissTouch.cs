@@ -13,7 +13,7 @@ public class MissTouch : MonoBehaviour{
   void Start(){
     x = GameManager.miss;
     y = x.ToString();
-    scoreText.text = "Misstouch: " + y;
+    scoreText.text = "Miss: " + y;
   }
 
   void Update(){
