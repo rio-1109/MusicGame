@@ -4,20 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class ReceiveScript : MonoBehaviour{
+public class Perfect : MonoBehaviour{
 
   public Text scoreText;
   public static int x;
   public static string y;
 
   void Start(){
-    x = GameManager.score;
+    x = GameManager.perfect;
     y = x.ToString();
-    scoreText.text = y;
-    //Debug.Log(y);
+    scoreText.text = "Perfect: " + y;
   }
 
   void Update(){
-    //int score = this.GetComponent<GameManager>().OnEndEvent2();
+
   }
 }
