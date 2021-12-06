@@ -18,9 +18,9 @@ public class GameManager : MonoBehaviour
   [SerializeField] PlayableDirector playableDirector;
 
   public static int score;
-  //public static int perfect;  //ここ
-  //public static int good;  //ここ
-  //public static int miss;  //ここ
+  public static int perfect;
+  public static int good;
+  public static int miss;
 
     void Start()
     {
@@ -51,7 +51,6 @@ public class GameManager : MonoBehaviour
       return score;
     }
 
-/*ここから
     //Perfect
     public void Perfect(int p){
       perfect += p;
@@ -78,7 +77,6 @@ public class GameManager : MonoBehaviour
     public int ReturnMiss(){
       return miss;
     }
-ここまで*/
 
     public void OnEndEvent()
     {
